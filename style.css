@@ -1,0 +1,164 @@
+/* Reset Básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Layout Geral */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+main {
+  flex: 1;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  margin-bottom: 35px;
+  color: #94a3b8;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  background-color: #1e293b;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #334155;
+}
+
+h1 {
+  color: #38bdf8;
+  font-size: 1.6rem;
+}
+
+.cabecalho-link {
+  color: #f8fafc;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  background-color: #334155;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.cabecalho-link:hover {
+  background-color: #38bdf8;
+  color: #0f172a;
+}
+
+/* Rodapé */
+footer {
+  background-color: #1e293b;
+  padding: 20px;
+  color: #94a3b8;
+  text-align: center;
+  border-top: 1px solid #334155;
+}
+
+/* Seção dos Cards */
+.cartoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  max-width: 1100px;
+}
+
+/* Estrutura 3D do Flashcard */
+.cartao {
+  width: 300px;
+  height: 220px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.cartao-interno {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* Gira o card no passar do mouse ou toque */
+.cartao:hover .cartao-interno,
+.cartao.virado .cartao-interno {
+  transform: rotateY(180deg);
+}
+
+.cartao-frente, 
+.cartao-verso {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  backface-visibility: hidden;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+/* Estilos da Frente de Cada Tema */
+.card-espaco {
+  background: linear-gradient(135deg, #1e1b4b, #312e81);
+  border: 1px solid #6366f1;
+}
+
+.card-biologia {
+  background: linear-gradient(135deg, #064e3b, #047857);
+  border: 1px solid #34d399;
+}
+
+.card-historia {
+  background: linear-gradient(135deg, #78350f, #b45309);
+  border: 1px solid #fbbf24;
+}
+
+/* Estilo do Verso */
+.cartao-verso {
+  background-color: #1e293b;
+  border: 2px solid #38bdf8;
+  transform: rotateY(180deg);
+}
+
+.materia {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.pergunta {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.resposta {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin: auto 0;
+}
